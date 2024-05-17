@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Tilt Warp', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Tilt_Warp/static/TiltWarp-Regular.ttf')
+    format('ttf');
+  font-optical-sizing: auto;
+  font-variation-settings:
+    'XROT' 0,
+    'YROT' 0;
+}
+
+@font-face {
+  font-family: 'Red Hat Display', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  src: url('../assets/fonts/Red_Hat_Display/static/RedHatDisplay-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Red Hat Display', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  src: url('../assets/fonts/Red_Hat_Display/static/RedHatDisplay-Bold.ttf');
+}
