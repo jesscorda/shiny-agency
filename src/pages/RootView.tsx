@@ -8,7 +8,7 @@ const RootView = () => {
   return (
     <StyleSheetManager
       shouldForwardProp={isPropValid}
-      disableVendorPrefixes={false}
+      enableVendorPrefixes={true}
     >
       <GlobalStyles />
       <Header />

@@ -30,7 +30,9 @@ export const darkTheme: DefaultTheme = {
   },
   shadows: {
     activeButton:
-      '0px 10px 20px rgba(0, 0, 0, 0.2),    0px 5px 10px rgba(0, 0, 0, 0.15)'
+      '0px 10px 20px rgba(0, 0, 0, 0.2),    0px 5px 10px rgba(0, 0, 0, 0.15)',
+    searchBar:
+      '0px 1px 4px rgba(0, 0, 0, 0.2),    0px 0px 0px rgba(0, 0, 0, 0.15)'
   },
   fonts: {
     tiltWarp: 'Tilt Warp',

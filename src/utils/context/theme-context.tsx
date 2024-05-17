@@ -14,9 +14,10 @@ interface ThemeProviderProps {
 export const LIGHT = 'light';
 export const DARK = 'dark';
 
-export const ThemeContext = createContext<ThemeContextProps | null>(
-  null
-);
+export const ThemeContext = createContext<ThemeContextProps>({
+  theme: LIGHT,
+  toggleTheme: () => {}
+});
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = useState(LIGHT);

@@ -91,7 +91,7 @@ const WordList = () => {
       </IconContainer>
       <TitleContainer>
         <WordHeading>{wordDetails?.word}</WordHeading>
-        <Flex gap="1rem" wrap="true">
+        <Flex gap="1rem" wrap="wrap">
           {wordDetails.phonetics.map((phonetic, key) => (
             <PhoneticsCard key={key}>{phonetic.text}</PhoneticsCard>
           ))}
@@ -99,7 +99,7 @@ const WordList = () => {
       </TitleContainer>
       <MeaningsContainer>
         {wordDetails.meanings.map((meaning, key) => (
-          <MeaningRow key={key} wrap="true">
+          <MeaningRow key={key}>
             <Flex direction="column" gap="2rem">
               <PartOfSpeech>{meaning.partOfSpeech}</PartOfSpeech>
               <SynonymComponent synonyms={meaning.synonyms} />

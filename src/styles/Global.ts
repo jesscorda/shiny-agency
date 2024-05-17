@@ -1,17 +1,8 @@
-import styled, {
-  createGlobalStyle,
-  css,
-  DefaultTheme
-} from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 import { device } from './BreakPoints';
 import fontsCss from './fonts.module.css';
 
-interface GlobalStylesProps {
-  theme: DefaultTheme;
-  isDarkMode: boolean;
-}
-
-export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
+export const GlobalStyles = createGlobalStyle`
  ${fontsCss} // this works as a normal styled css
  
 /* Box sizing rules */
@@ -116,10 +107,7 @@ interface GridProps {
 
 export const Grid = styled.div<GridProps>`
   display: grid;
-  grid-template-columns: repeat(
-    ${({ columns }: { columns: number }) => columns || 2},
-    1fr
-  );
+  grid-template-columns: repeat(${props => props.columns || 2}, 1fr);
   justify-items: ${({ end }) => end && 'end'};
   grid-column-gap: calc(${({ cgp }) => cgp} * 1px);
 
@@ -197,7 +185,7 @@ interface FlexProps {
   flxEnd?: boolean;
   gap?: string;
   direction?: string;
-  wrap?: boolean;
+  wrap?: string;
 }
 
 export const Flex = styled.div<FlexProps>`
@@ -231,16 +219,18 @@ export const Flex = styled.div<FlexProps>`
       justify-content: flex-end;
       align-items: center;
     `}
-  ${({ gap }) =>
-    gap &&
-    css`
-      gap: ${gap};
-    `}
-    ${({ wrap }) =>
-    wrap &&
-    css`
-      flex-wrap: ${wrap};
-    `}
+    ${({ gap }) =>
+    gap
+      ? css`
+          gap: ${gap};
+        `
+      : {}}
+  ${({ wrap }) =>
+    wrap
+      ? css`
+          flex-wrap: ${wrap};
+        `
+      : {}}
 `;
 
 interface ResizableBoxProps {
